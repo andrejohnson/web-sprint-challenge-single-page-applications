@@ -5,7 +5,7 @@ export default function Navigation () {
     const history = useHistory()
     return(
         <div>
-            <button onClick={()=> history.push('/')}>Home</button>
+            <button id='order-pizza' onClick={()=> history.push('/pizza')}>Home</button>
         </div>
     )
 }

@@ -8,15 +8,15 @@ export default function Form(props){
     const{name, size, pepperoni, sausage, mushroom, onion, instructions, handleChange, handleSubmit, disabled } = props
     
     return(
-        <form onSubmit={handleSubmit}>
+        <form id='pizza-form' onSubmit={handleSubmit}>
             <label>
                 Your Name:
-                <input id='name' name='name' value={name} onChange={handleChange}/>
+                <input id='name-input' name='name' value={name} onChange={handleChange}/>
             </label>
             <br/>
             <label>
                 Pizza Size:
-                <select name='size' value={size} onChange={handleChange}>
+                <select id='size-dropdown' name='size' value={size} onChange={handleChange}>
                     <option value='S'>Small</option>
                     <option value='M'>Medium</option>
                     <option value='L'>Large</option>
@@ -24,30 +24,30 @@ export default function Form(props){
                 </select>
             </label>
             <div>
-                <h4>Desired Toppings</h4>
+                <h4> Toppings</h4>
                 <label>
                     Pepperoni:
                     <input id='pepperoni' name='pepperoni' type='checkbox' checked={pepperoni} onChange={handleChange}/>
                 </label>
                 <label>
                     Sausage:
-                    <input id='sausage' name='sausage' type='checkbox'checked={sausage} onChange={handleChange}/>
+                    <input id='sausage' name='sausage' type='checkbox' checked={sausage} onChange={handleChange}/>
                 </label>
                 <label>
                     Mushroom:
-                    <input id='mushroom' name='mushroom' type='checkbox'checked={mushroom} onChange={handleChange}/>
+                    <input id='mushroom' name='mushroom' type='checkbox' checked={mushroom} onChange={handleChange}/>
                 </label>
                 <label>
                     Onion:
-                    <input id='onion' name='onion' type='checkbox'checked={onion} onChange={handleChange}/>
+                    <input id='onion' name='onion' type='checkbox' checked={onion} onChange={handleChange}/>
                 </label>
                 <label>
                     <br />
                     Special Instructions
-                    <input id='instructions' name='instructions' type='textbox' value={instructions} onChange={handleChange}/>
+                    <input id='special-text' name='instructions' type='textbox' value={instructions} onChange={handleChange}/>
                 </label>
             </div>
-            <button id='submitButton' disabled={disabled} type='submit'>Place Order</button>
+            <button id='order-button' disabled={disabled} type='submit'>Place Order</button>
         </form>
     )
 }
